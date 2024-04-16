@@ -1,6 +1,17 @@
-<div>
-    Implement details in this component.
-</div>
 <p>
     Implement search in the <a [routerLink]="['/']">search component</a>
 </p>
+<div class="error" *ngIf="detailService.status$|async as errorMessage">Error fetching Person: {{errorMessage}}</div>
+<div *ngIf="detailService.selectedPerson$|async as person">
+    <h1>{{person.name}}</h1>
+    <div class="fav-color">Favorite color:
+        <span *ngIf="person.favorite_color">{{person.favorite_color}}</span>
+        <span *ngIf="!person.favorite_color">none</span>
+    </div>
+        <div *ngFor="let sortedQuote of person.sortedQuotes||[]">
+            <div class="liked-quotes">
+                <span *ngFor="let likedQuote of sortedQuote[1]">"{{likedQuote}}"</span>
+            </div>
+            <div class="like-count">{{sortedQuote[0]}} Likes</div>
+        </div>
+</div>
