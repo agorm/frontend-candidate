@@ -143,6 +143,6 @@ app.use((err, req, res, next) => {
   res.status(500).send('Server error occurred');
 });
 
-app.listen(5000, () => {
-  console.log('Backend started at: http://localhost:5000');
+app.listen(5010, () => {
+  console.log('Backend started at: http://localhost:5010');
 });

@@ -28,7 +28,7 @@ Display a link that allows the user to go back to the search page, which should 
 #### Search
 
 - Method: GET
-- URL: http://localhost:5000/search
+- URL: http://localhost:5010/search
 - Query string parameters (one or both are required):
     - `term`: name search term
     - `color`: favorite color
@@ -46,7 +46,7 @@ Display a link that allows the user to go back to the search page, which should 
 #### Details
 
 - Method: GET
-- URL: http://localhost:5000/details/{id}
+- URL: http://localhost:5010/details/{id}
 - Example Response (key in `quotes` is number of likes; value is quotes that have those number of likes).
 
 
