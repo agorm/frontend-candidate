@@ -1,6 +1,31 @@
-<p>
-    Implement search in this component
-</p>
-<p>
-    Implement details in the <a [routerLink]="['/details/123']">details component</a>
-</p>
+<form class="search-bar" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+  <input type="text" id="term" formControlName="term" class="search-term" />
+  <select class="search-color" formControlName="color">
+    <option value="">--none--</option>
+    <option *ngFor="let color of colorOptions" [value]="color">
+      {{ color }}
+    </option>
+  </select>
+  <button
+    [title]="searchForm.status === 'INVALID'
+        ? 'Please enter at least one search parameter'
+        : 'Click to search'"
+    [disabled]="searchForm.status === 'INVALID'"
+    type="submit"
+  >
+    Search
+  </button>
+</form>
+
+<div *ngIf="searchService.people$ | async as peopleList">
+  <div class="status-message" *ngIf="searchService.status$ | async as statusMessage">
+    {{ statusMessage }}
+  </div>
+  <div class="people-list">
+      <div class="person-card" *ngFor="let person of peopleList">
+      <a [routerLink]="['/details/' + person.id]">{{ person.name }}</a>
+    </div>
+  </div>
+  
+</div>
+

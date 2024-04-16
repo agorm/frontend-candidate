@@ -1,0 +1,35 @@
+@import '../styles/colors';
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    align-items: left;
+
+    .search-term{
+        flex: 3 3 50;
+
+    }
+    .search-color {
+        flex: 1 1 30;
+    }
+}
+
+.people-list {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    .person-card {
+        text-align: center;
+        min-width: 250px;
+        border: thin solid darkgray;
+        padding: 25px 15px;    
+    }
+}
+
+.status-message {
+    font-size: 18px;
+    margin-top: 25px
+
+}
