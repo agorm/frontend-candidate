@@ -1,6 +1,5 @@
-<p>
-    Implement search in the <a [routerLink]="['/']">search component</a>
-</p>
+<a [routerLink]="['/']">Back to Search Results</a>
+
 <div class="error" *ngIf="detailService.status$|async as errorMessage">Error fetching Person: {{errorMessage}}</div>
 <div *ngIf="detailService.selectedPerson$|async as person">
     <h1>{{person.name}}</h1>

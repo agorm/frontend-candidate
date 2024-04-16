@@ -20,7 +20,13 @@ export class SearchComponent implements OnInit {
             },
             { validators: [this.oneOrTheOtherFieldValidation] }
         );
-        this.searchService.reset();
+
+
+        /**
+         * CALLOUT: I originally implemented a code to reset search results, but the mockup indicates "Back to search results" so I commented out the reset
+         * TODO: Consider saving searchForm values so we can restore the form when we return to the search results
+         */
+        // this.searchService.reset();
     }
 
     /**
